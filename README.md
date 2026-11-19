@@ -204,3 +204,15 @@ For the second object, `BigBag` overrides the `add()` method and calls `super.ad
 
 5
 
+```
+
+
+
+\### Was I right?
+
+
+
+Yes, my prediction was correct. The actual output matches my prediction. The program printed 1 and 5, exactly as I predicted.
+
+
+
