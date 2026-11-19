@@ -198,15 +198,9 @@ For the second object, `BigBag` overrides the `add()` method and calls `super.ad
 
 
 
-To be added after running the code.
+```text
 
+1
 
-
-\### Was I right?
-
-
-
-To be completed after comparing my prediction with the actual output.
-
-
+5
 
