@@ -53,3 +53,67 @@ class BusCard {
     }
   }
 }
+
+// PART 2: StudentCard using inheritance
+class StudentCard extends BusCard {
+  int _discount = 0;
+
+  // Constructor
+  StudentCard(String owner, int balance, int discount)
+      : super(owner, balance) {
+    _discount = discount;
+  }
+
+  // Override showInfo
+  @override
+  void showInfo() {
+    super.showInfo();
+    print('Student card: $_discount% off');
+  }
+
+  // TODO 4: Override pay
+  @override
+  void pay(int fare) {
+    int off = fare * _discount ~/ 100;
+    print('Student discount: $off RWF');
+    super.pay(fare - off);
+  }
+}
+
+// PART 3: Main method
+void main() {
+  // My personal numbers
+  // D = 23
+  // L = 3
+  // Starting balance = 1230 RWF
+  // Bus fare = 223 RWF
+  // Student discount = 13%
+
+  // Create a normal bus card
+  BusCard card = BusCard('Saleh Mahamat Hisseine', 1230);
+
+  // Test the owner setter
+  card.owner = 'Al';
+  card.showInfo();
+
+  // TODO 5: Change owner to full name
+  card.owner = 'Saleh Mahamat Hisseine';
+  card.showInfo();
+
+  // TODO 6: Test top-up
+  card.topUp(100);
+  card.topUp(2000);
+
+  // TODO 7: Pay bus fare two times
+  card.pay(223);
+  card.pay(223);
+  card.showInfo();
+
+  // TODO 8: Create a StudentCard
+  StudentCard studentCard =
+      StudentCard('Saleh Mahamat Hisseine', 1230, 13);
+
+  // TODO 9: Pay bus fare with student card
+  studentCard.pay(223);
+  studentCard.showInfo();
+}
