@@ -1,36 +1,36 @@
 
 
-\# Dart OOP Assignment: Kigali Bus Card
+# Dart OOP Assignment: Kigali Bus Card
 
 
 
-\*\*Name:\*\* Saleh Mahamat Hisseine  
+**Name:** Saleh Mahamat Hisseine  
 
-\*\*Student ID:\*\* 23307/2023
-
-
-
-\## My numbers
+**Student ID:** 23307/2023
 
 
 
-\- D = 23
-
-\- L = 3
-
-\- Starting balance = 1230 RWF
-
-\- Bus fare = 223 RWF
-
-\- Student discount = 13%
+## My numbers
 
 
 
-\---
+- D = 23
+
+- L = 3
+
+- Starting balance = 1230 RWF
+
+- Bus fare = 223 RWF
+
+- Student discount = 13%
 
 
 
-\## Output of main.dart
+---
+
+
+
+## Output of main.dart
 
 
 
@@ -64,11 +64,11 @@ Student card: 13% off
 
 
 
-\---
+---
 
 
 
-\## Part 1: Why no setter for balance?
+## Part 1: Why no setter for balance?
 
 
 
@@ -76,15 +76,15 @@ There is no setter for balance because the balance should not be changed directl
 
 
 
-\---
+---
 
 
 
-\## Part 2: What does \~/ do?
+## Part 2: What does ~/ do?
 
 
 
-The `\~/` operator performs integer division. It divides two numbers and returns the whole-number result without the decimal part.
+The `~/` operator performs integer division. It divides two numbers and returns the whole-number result without the decimal part.
 
 
 
@@ -94,9 +94,9 @@ For example:
 
 ```dart
 
-print(237 \* 17 / 100);
+print(237 * 17 / 100);
 
-print(237 \* 17 \~/ 100);
+print(237 * 17 ~/ 100);
 
 ```
 
@@ -116,15 +116,15 @@ The output is:
 
 
 
-The `/` operator returns a decimal result, while `\~/` returns an integer by removing the fractional part.
+The `/` operator returns a decimal result, while `~/` returns an integer by removing the fractional part.
 
 
 
-\---
+---
 
 
 
-\## Part 4: Bug table
+## Part 4: Bug table
 
 
 
@@ -132,7 +132,7 @@ The `/` operator returns a decimal result, while `\~/` returns an integer by rem
 
 |---|---|---|---|
 
-| 1 | `String \_brand;` and `int \_battery;` | Non-nullable fields must be initialized before they are used. | Initialized `\_brand` with an empty string and `\_battery` with 0. |
+| 1 | `String _brand;` and `int _battery;` | Non-nullable fields must be initialized before they are used. | Initialized `_brand` with an empty string and `_battery` with 0. |
 
 | 2 | `SmartPhone(String brand, int battery, String system)` | The child constructor does not pass the required arguments to the parent Phone constructor. | Added `: super(brand, battery)` to call the parent constructor. |
 
@@ -144,11 +144,11 @@ The `/` operator returns a decimal result, while `\~/` returns an integer by rem
 
 
 
-\### Not a bug
+### Not a bug
 
 
 
-\*\*Line:\*\* `Phone p = new Phone('Tecno', 50);`
+**Line:** `Phone p = new Phone('Tecno', 50);`
 
 
 
@@ -156,15 +156,15 @@ This line is correct because the `new` keyword is valid in Dart when creating an
 
 
 
-\---
+---
 
 
 
-\## Part 5: Predict the output
+## Part 5: Predict the output
 
 
 
-\### My prediction (before running the code)
+### My prediction (before running the code)
 
 
 
@@ -182,7 +182,7 @@ I predict the program will print:
 
 
 
-\*\*Explanation:\*\*
+**Explanation:**
 
 
 
@@ -194,7 +194,7 @@ For the second object, `BigBag` overrides the `add()` method and calls `super.ad
 
 
 
-\### Real output
+### Real output
 
 
 
@@ -208,11 +208,8 @@ For the second object, `BigBag` overrides the `add()` method and calls `super.ad
 
 
 
-\### Was I right?
+### Was I right?
 
 
 
 Yes, my prediction was correct. The actual output matches my prediction. The program printed 1 and 5, exactly as I predicted.
-
-
-
