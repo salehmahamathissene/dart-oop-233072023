@@ -92,11 +92,37 @@ The / operator returns a decimal result, while \~/ returns an integer.
 
 
 
+
+
 \## Part 4: Bug table
 
 
 
-To be completed.
+| Bug | The line | Why it is wrong (my words) | My fix |
+
+|---|---|---|---|
+
+| 1 | Lines 2–3: `\_brand` and `\_battery` | Non-nullable fields must have initial values before the constructor body runs. | Initialized `\_brand` with an empty string and `\_battery` with 0. |
+
+| 2 | Line 19: SmartPhone constructor | The child constructor does not pass the required values to the Phone constructor. | Added `: super(brand, battery)`. |
+
+| 3 | Line 24: `@override` | Phone does not originally contain a restart method, so SmartPhone cannot override it. | Added a restart method to Phone. |
+
+| 4 | Line 31: `p.battery = 100` | Phone originally has no battery setter. | Added a setter that accepts values from 0 to 100. |
+
+| 5 | Line 32: `p.battery()` | Battery is a getter, not a method. It cannot be called using parentheses. | Changed it to `print(p.battery);`. |
+
+
+
+\### Not a bug
+
+
+
+\*\*Line 30: `Phone p = new Phone('Tecno', 50);`\*\*
+
+
+
+The `new` keyword is valid in Dart. It is optional when creating an object, so this line is correct.
 
 
 
