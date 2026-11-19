@@ -26,6 +26,10 @@
 
 
 
+\---
+
+
+
 \## Output of main.dart
 
 
@@ -60,11 +64,19 @@ Student card: 13% off
 
 
 
+\---
+
+
+
 \## Part 1: Why no setter for balance?
 
 
 
-There is no setter for balance because the balance should not be changed directly. Only the topUp() and pay() methods should change it. These methods check the transaction before updating the balance. This protects the card balance from invalid changes.
+There is no setter for balance because the balance should not be changed directly. Only the `topUp()` and `pay()` methods should change it. These methods check the transaction before updating the balance. This protects the card balance from invalid changes.
+
+
+
+\---
 
 
 
@@ -72,7 +84,7 @@ There is no setter for balance because the balance should not be changed directl
 
 
 
-The \~/ operator performs integer division. It divides two numbers and returns the whole-number result without the decimal part.
+The `\~/` operator performs integer division. It divides two numbers and returns the whole-number result without the decimal part.
 
 
 
@@ -80,17 +92,35 @@ For example:
 
 
 
-237 \* 17 / 100 = 40.29
+```dart
+
+print(237 \* 17 / 100);
+
+print(237 \* 17 \~/ 100);
+
+```
 
 
 
-237 \* 17 \~/ 100 = 40
+The output is:
 
 
 
-The / operator returns a decimal result, while \~/ returns an integer.
+```text
+
+40.29
+
+40
+
+```
 
 
+
+The `/` operator returns a decimal result, while `\~/` returns an integer by removing the fractional part.
+
+
+
+\---
 
 
 
@@ -102,15 +132,15 @@ The / operator returns a decimal result, while \~/ returns an integer.
 
 |---|---|---|---|
 
-| 1 | Lines 2–3: `\_brand` and `\_battery` | Non-nullable fields must have initial values before the constructor body runs. | Initialized `\_brand` with an empty string and `\_battery` with 0. |
+| 1 | `String \_brand;` and `int \_battery;` | Non-nullable fields must be initialized before they are used. | Initialized `\_brand` with an empty string and `\_battery` with 0. |
 
-| 2 | Line 19: SmartPhone constructor | The child constructor does not pass the required values to the Phone constructor. | Added `: super(brand, battery)`. |
+| 2 | `SmartPhone(String brand, int battery, String system)` | The child constructor does not pass the required arguments to the parent Phone constructor. | Added `: super(brand, battery)` to call the parent constructor. |
 
-| 3 | Line 24: `@override` | Phone does not originally contain a restart method, so SmartPhone cannot override it. | Added a restart method to Phone. |
+| 3 | `@override void restart()` in SmartPhone | The Phone parent class does not originally have a restart method to override. | Added a `restart()` method to the Phone class. |
 
-| 4 | Line 31: `p.battery = 100` | Phone originally has no battery setter. | Added a setter that accepts values from 0 to 100. |
+| 4 | `p.battery = 100;` | The Phone class originally has no setter for battery. | Added a setter that accepts only values from 0 to 100. |
 
-| 5 | Line 32: `p.battery()` | Battery is a getter, not a method. It cannot be called using parentheses. | Changed it to `print(p.battery);`. |
+| 5 | `print(p.battery());` | Battery is a getter, not a method. It cannot be called with parentheses. | Changed it to `print(p.battery);`. |
 
 
 
@@ -118,27 +148,65 @@ The / operator returns a decimal result, while \~/ returns an integer.
 
 
 
-\*\*Line 30: `Phone p = new Phone('Tecno', 50);`\*\*
+\*\*Line:\*\* `Phone p = new Phone('Tecno', 50);`
 
 
 
-The `new` keyword is valid in Dart. It is optional when creating an object, so this line is correct.
+This line is correct because the `new` keyword is valid in Dart when creating an object. It is optional, so the object can also be created without it.
 
 
 
-\## Part 5
+\---
 
 
 
-My prediction:
+\## Part 5: Predict the output
 
 
 
-Real output:
+\### My prediction (before running the code)
 
 
 
-Was I right?
+I predict the program will print:
+
+
+
+```text
+
+1
+
+5
+
+```
+
+
+
+\*\*Explanation:\*\*
+
+
+
+For the first object, `Bag` starts with 0 items. Calling `a.add()` increases the items to 1. Then `a.items = -5` is rejected because the setter only accepts values greater than or equal to zero. Therefore, the first output is 1.
+
+
+
+For the second object, `BigBag` overrides the `add()` method and calls `super.add()` twice. Each call increases the number of items by 2. Calling `b.add()` two times gives 4 items. Then `b.items = b.items + 1` increases the value to 5. Therefore, the second output is 5.
+
+
+
+\### Real output
+
+
+
+To be added after running the code.
+
+
+
+\### Was I right?
+
+
+
+To be completed after comparing my prediction with the actual output.
 
 
 
